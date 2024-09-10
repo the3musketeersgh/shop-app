@@ -35,7 +35,7 @@ function Header({ cart, onUpdateCartItemQuantity }) {
           <h1>Elegant Context</h1>
         </div>
         <p>
-          <button onClick={handleOpenCartClick}>Cart({cartQuantity})</button>
+          <button onClick={handleOpenCartClick}>Cart ({cartQuantity})</button>
         </p>
       </header>
     </>

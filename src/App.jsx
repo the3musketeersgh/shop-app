@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Shop from "./components/Shop";
 import { useState } from "react";
 import { DUMMY_PRODUCTS } from "./dummy-products";
+import Product from "./components/Product";
 function App() {
   const [shoppingCart, setShoppingCart] = useState({ items: [] });
 
@@ -64,7 +65,13 @@ function App() {
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
       />
-      <Shop onAddItemToCart={handleAddItemToCart} />
+      <Shop>
+        {DUMMY_PRODUCTS.map((product) => (
+          <li key={product.id}>
+            <Product {...product} onAddToCart={handleAddItemToCart} />
+          </li>
+        ))}
+      </Shop>
     </>
   );
 }
